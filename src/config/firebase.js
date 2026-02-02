@@ -12,12 +12,7 @@ import {
 // Firebase configuration
 // Replace with your actual Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDT-qjGk_ZzRLPGN2TgwN2zvMqkPJFJOGk",
-  authDomain: "edelweiss-v1.firebaseapp.com",
-  projectId: "edelweiss-v1",
-  storageBucket: "edelweiss-v1.firebasestorage.app",
-  messagingSenderId: "369202164813",
-  appId: "1:369202164813:web:7dcb26635ec2cb141a5804"
+
 };
 
 // Initialize Firebase
