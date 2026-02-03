@@ -14,9 +14,11 @@
     "@mantine/core": "^8.3.13",
     "@mantine/hooks": "^8.3.13",
     "@tanstack/react-query": "^5.90.20",
+    "clsx": "^2.1.1",
     "firebase": "^12.8.0",
-    "framer-motion": "^12.29.2",
+    "framer-motion": "^12.31.0",
     "lucide-react": "^0.563.0",
+    "next-themes": "^0.4.6",
     "postcss": "^8.5.6",
     "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
@@ -24,6 +26,8 @@
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.0",
     "recharts": "^3.7.0",
+    "tailwind-merge": "^3.4.0",
+    "three": "^0.182.0",
     "zustand": "^5.0.11"
   },
   "devDependencies": {

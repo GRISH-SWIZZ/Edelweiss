@@ -14,6 +14,8 @@ import Dashboard from './pages/Dashboard';
 
 // Components
 import Chatbot from './components/Chatbot';
+import { ThemeProvider } from './components/ThemeProvider';
+import { DottedSurface } from './components/ui/DottedSurface';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,11 +29,11 @@ const queryClient = new QueryClient({
 // Protected Route wrapper
 function ProtectedRoute({ children }) {
   const user = useStore((state) => state.user);
-  
+
   if (!user) {
     return <Navigate to="/login" replace />;
   }
-  
+
   return children;
 }
 
@@ -48,23 +50,26 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <MantineProvider theme={theme} defaultColorScheme="dark">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <Dashboard />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-          <Chatbot />
-        </BrowserRouter>
-      </MantineProvider>
+      <ThemeProvider>
+        <MantineProvider theme={theme} defaultColorScheme="dark">
+          <BrowserRouter>
+            <DottedSurface />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+            <Chatbot />
+          </BrowserRouter>
+        </MantineProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
